@@ -16,7 +16,7 @@ sliderBody.ontouchstart = (event) => {
 pageBody.onmouseup = (event) => {
 	if (isTouch) {
 		let endTouch = event.clientX,
-			isSwipe = Math.abs(beginTouch - endTouch) > 250 ? true : false;
+			isSwipe = Math.abs(beginTouch - endTouch) > 150 ? true : false;
 		// console.log(beginTouch, endTouch);
 		if (beginTouch < endTouch && isSwipe) {
 			console.log('to the left');
@@ -33,15 +33,15 @@ pageBody.onmouseup = (event) => {
 pageBody.ontouchend = (event) => {
 	if (isTouch) {
 		let endTouch = event.changedTouches[0].clientX,
-			isSwipe = Math.abs(beginTouch - endTouch) > 250 ? true : false;
+			isSwipe = Math.abs(beginTouch - endTouch) > 100 ? true : false;
 		if (beginTouch < endTouch && isSwipe) {
-			console.log('to the left');
+			// console.log('to the left');
 			switchPrev();
 		}
 		else if (beginTouch > endTouch && isSwipe) {
-			console.log('to the right');
+			// console.log('to the right');
 			switchNext();
 		}
-		isTouch = false;
+		setTimeout(() => {isTouch = false}, 4);
 	}
 }

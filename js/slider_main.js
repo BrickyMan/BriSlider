@@ -2,7 +2,7 @@ let slides = document.getElementsByClassName('slide'),
 	next = document.querySelector('#btnNext'),
 	prev = document.querySelector('#btnPrev'),
 	current = 0,
-	transitionSpeed = 400,
+	transitionSpeed = 500,
 	transitionValue = 'ease-in-out ' + transitionSpeed + 'ms',
 	isSlideStop = true;
 
@@ -14,18 +14,18 @@ function switchNext() {
 		slides[nextSlide].style.transition = 'none';
 		slides[nextSlide].style.transform = 'translateX(100%)';
 		slides[current].style.transition = transitionValue;
-		setTimeout(() => {slides[nextSlide].style.transition = transitionValue}, 0);
+		setTimeout(() => {slides[nextSlide].style.transition = transitionValue}, 20);
 		setTimeout(() => {
 			slides[nextSlide].style.transform = 'translateX(0%)';
 			slides[current].style.transform = 'translateX(-100%)';
-		}, 1);
+		}, 40);
 		setTimeout(() => {
 			current++;
 			if (current > slides.length - 1) {
 				current = 0;
 			}
 			changeNavbarCurrent();
-		}, 2);
+		}, 60);
 	}
 }
 
@@ -37,18 +37,18 @@ function switchPrev() {
 		slides[prevSlide].style.transition = 'none';
 		slides[prevSlide].style.transform = 'translateX(-100%)';
 		slides[current].style.transition = transitionValue;
-		setTimeout(() => {slides[prevSlide].style.transition = transitionValue}, 0);
+		setTimeout(() => {slides[prevSlide].style.transition = transitionValue}, 20);
 		setTimeout(() => {
 			slides[prevSlide].style.transform = 'translateX(0%)';
 			slides[current].style.transform = 'translateX(100%)';
-		}, 1);
+		}, 40);
 		setTimeout(() => {
 			current--;
 			if (current < 0) {
 				current = slides.length - 1;
 			}
 			changeNavbarCurrent();
-		}, 2);
+		}, 60);
 	}
 }
 
