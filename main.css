@@ -22,7 +22,6 @@ main {
 	max-width: 800px;
 	height: 100vh;
 	max-height: 600px;
-	/* background-color: rgb(146, 106, 106); */
 	border: 2px solid rgb(53, 53, 53);
 	position: relative;
 	overflow: hidden;

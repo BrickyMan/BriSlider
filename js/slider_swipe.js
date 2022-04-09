@@ -33,7 +33,7 @@ pageBody.onmouseup = (event) => {
 pageBody.ontouchend = (event) => {
 	if (isTouch) {
 		let endTouch = event.changedTouches[0].clientX,
-			isSwipe = Math.abs(beginTouch - endTouch) > 100 ? true : false;
+			isSwipe = Math.abs(beginTouch - endTouch) > 50 ? true : false;
 		if (beginTouch < endTouch && isSwipe) {
 			// console.log('to the left');
 			switchPrev();

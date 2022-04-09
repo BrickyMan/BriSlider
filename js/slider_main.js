@@ -2,7 +2,7 @@ let slides = document.getElementsByClassName('slide'),
 	next = document.querySelector('#btnNext'),
 	prev = document.querySelector('#btnPrev'),
 	current = 0,
-	transitionSpeed = 500,
+	transitionSpeed = 300,
 	transitionValue = 'ease-in-out ' + transitionSpeed + 'ms',
 	isSlideStop = true;
 
