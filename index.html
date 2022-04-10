@@ -5,14 +5,26 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<title>Bricksman Slider</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-	
+	<link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/slider.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/settings.css'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 	<main>
+		<div class="header">
+			<h1>Bricksman Slider</h1>
+			<p>Simple, customizible and free. Via vanilla JS.</p>
+		</div>
+		<div class="download-wrapper">
+			<a href="#" class="download-btn">Download Vanilla</a>
+			<a href="#" class="download-btn">Download Styled</a>
+		</div>
 		<div class="slider" id="sliderBody">
-			<button id="btnPrev"><</button>
-			<button id="btnNext">></button>
+			<button id="btnPrev">🢐</button>
+			<button id="btnNext">🢒</button>
 			<div class="slide slide1">1</div>
 			<div class="slide slide2">2</div>
 			<div class="slide slide3">3</div>
@@ -21,10 +33,16 @@
 			<div class="slide slide3">6</div>
 			<div class="slider-navbar" id="sliderNavbar"></div>
 		</div>
+		<div id="settingsBoard">
+			<label for="switchTimer">Autoplay</label>
+			<button state="on" id="switchTimer">
+				<span id="switchTimerBuble"></span>
+			</button>
+		</div>
 	</main>
 	<script src='js/slider_main.js'></script>
 	<script src='js/slider_bar.js'></script>
 	<script src='js/slider_swipe.js'></script>
-	<script src="js/slider_timer.js"></script>
+	<script src="js/slider_settings.js"></script>
 </body>
 </html>

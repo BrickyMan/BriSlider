@@ -1,3 +1,5 @@
+let navbar = document.querySelector('#sliderNavbar');
+
 function changeNavbarCurrent() {
 	document.querySelector('.slider-navbar_cur-btn').classList.remove('slider-navbar_cur-btn');
 	navbarBtns[current].classList.add('slider-navbar_cur-btn');
@@ -39,11 +41,4 @@ for (let i = 0; i < navbarBtns.length; i++) {
 	navbarBtns[i].onclick = () => {
 		switchSlideViaBar(i);
 	};
-}
-
-if (isAutoplay) {
-	navbar.classList.add('slider-navbar_autoplay');
-	timer = setInterval(() => {
-		switchNext();
-	}, 3000);
 }

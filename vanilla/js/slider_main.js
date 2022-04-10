@@ -1,22 +1,13 @@
 let slides = document.getElementsByClassName('slide'),
 	next = document.querySelector('#btnNext'),
 	prev = document.querySelector('#btnPrev'),
-	navbar = document.querySelector('#sliderNavbar'),
-	transitionSpeed = 300, 	// Time of animation in ms, it's the only place where you have to change it
+	current = 0,
+	transitionSpeed = 300,
 	transitionValue = 'ease-in-out ' + transitionSpeed + 'ms',
-	isSlideStop = true,
-	isAutoplay = true, 		// true - autoplay is on, false - off
-	current = 0, 			// Number of first active slide
-	timer;
+	isSlideStop = true;
 
 function switchNext() {
 	if (isSlideStop) {
-		if (isAutoplay) {
-			clearInterval(timer);
-			timer = setInterval(() => {
-				switchNext();
-			}, 3000);
-		}
 		isSlideStop = false;
 		setTimeout(() => {isSlideStop = true;}, transitionSpeed * 1.2);
 		let nextSlide = (current == slides.length - 1) ? 0 : (current + 1);
@@ -40,12 +31,6 @@ function switchNext() {
 
 function switchPrev() {
 	if (isSlideStop) {
-		if (isAutoplay) {
-			clearInterval(timer);
-			timer = setInterval(() => {
-				switchNext();
-			}, 3000);
-		}
 		isSlideStop = false;
 		setTimeout(() => {isSlideStop = true;}, transitionSpeed * 1.2);
 		let prevSlide = (current == 0) ? (slides.length - 1) : (current - 1);
@@ -77,3 +62,7 @@ if (slides.length > 1) {
 	next.onclick = switchNext;	
 	prev.onclick = switchPrev;
 }
+
+let timer = setInterval(() => {
+	switchNext();
+}, 3000);
