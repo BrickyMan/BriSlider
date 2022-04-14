@@ -15,6 +15,12 @@ let navbarBtns = document.querySelectorAll('#sliderNavbar button');
 
 function switchSlideViaBar(clickedSlide) {
 	if (clickedSlide != current && isSlideStop) {
+		if (isAutoplay) {
+			clearInterval(timer);
+			timer = setInterval(() => {
+				switchNext();
+			}, 3000);
+		}
 		isSlideStop = false;
 		setTimeout(() => {isSlideStop = true;}, transitionSpeed * 1.2);
 		// 1 means clicked slide is in the right, -1 is in the left
@@ -45,5 +51,5 @@ if (isAutoplay) {
 	navbar.classList.add('slider-navbar_autoplay');
 	timer = setInterval(() => {
 		switchNext();
-	}, 3000);
+	}, autoplayDuration);
 }

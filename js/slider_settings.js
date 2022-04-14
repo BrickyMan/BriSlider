@@ -13,6 +13,6 @@ switchTimer.onclick = () => {
 		navbar.classList.add('slider-navbar_autoplay');
 		timer = setInterval(() => {
 			switchNext();
-		}, 3000);
+		}, autoplayDuration);
 	}
 }
